@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "declaration": true,
+    "strict": true,
+    "outDir": "lib"
+  },
+  "include": ["string_score.ts"],
+  "exclude": ["node_modules", "lib"]
+}

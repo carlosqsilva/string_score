@@ -1,6 +1,6 @@
 {
   "name": "@carlosqsilva/string_score",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "String Scoring Algorithm packaged for NodeJS",
   "keywords": [
     "string",
@@ -11,10 +11,11 @@
     "lib/**/*"
   ],
   "type": "module",
-  "types": "./lib/string_score.d.ts",
   "module": "./lib/index.js",
+  "types": "./lib/string_score.d.ts",
   "exports": {
-    "import": "./lib/index.js"
+    "import": "./lib/index.js",
+    "types": "./lib/string_score.d.ts"
   },
   "scripts": {
     "build": "node ./esbuild",

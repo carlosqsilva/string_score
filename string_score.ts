@@ -1,12 +1,20 @@
 // from: https://stackoverflow.com/a/37511463
-const normalize = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+const normalize = (str: string) =>
+  str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 
-export function score(string: string, query: string, fuzziness?: number): number {
+export function score(
+  string: string,
+  query: string,
+  fuzziness?: number,
+): number {
   // If the string is equal to the word, perfect match.
   if (string === query) return 1;
-  
-  const lString = normalize(string)
-  const lWord = normalize(query)
+
+  const lString = normalize(string);
+  const lWord = normalize(query);
 
   if (lString === lWord) return 1;
 
@@ -16,11 +24,11 @@ export function score(string: string, query: string, fuzziness?: number): number
   let runningScore = 0;
   let charScore: number;
   let finalScore: number;
-  let strLength = lString.length;
-  let wordLength = query.length;
+  const strLength = lString.length;
+  const wordLength = query.length;
   let idxOf: number;
-  let startAt: number = 0;
-  let fuzzies: number = 1;
+  let startAt = 0;
+  let fuzzies = 1;
   let fuzzyFactor: number;
   let i: number;
 
@@ -71,7 +79,7 @@ export function score(string: string, query: string, fuzziness?: number): number
         charScore = 0.7;
       } else {
         charScore = 0.1;
-        
+
         if (string[idxOf - 1] === " ") {
           charScore += 0.8;
         }

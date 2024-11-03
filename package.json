@@ -1,5 +1,5 @@
 {
-  "name": "string_score",
+  "name": "@carlosqsilva/string_score",
   "version": "0.1.0",
   "description": "String Scoring Algorithm packaged for NodeJS",
   "keywords": [
@@ -12,23 +12,24 @@
   ],
   "type": "module",
   "types": "./lib/string_score.d.ts",
-  "main": "./lib/string_score.cjs",
+  "module": "./lib/index.js",
   "exports": {
-    "import": "./lib/string_score.esm.js",
-    "require": "./lib/string_score.cjs"
+    "import": "./lib/index.js"
   },
   "scripts": {
     "build": "node ./esbuild",
     "postbuild": "tsc --emitDeclarationOnly"
   },
-  "author": "Joshaven Potter <yourtech@gmail.com>",
+  "author": "Carlos Silva <carlosqsilva@outlook.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/carlosqsilva/string_score.git"
   },
-  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
-    "esbuild": "^0.14.34",
-    "typescript": "^4.6.3"
+    "esbuild": "0.24",
+    "typescript": "5.6.3"
   }
 }

@@ -30,7 +30,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "esbuild": "0.24",
-    "typescript": "5.6.3"
+    "esbuild": "0.24.2",
+    "typescript": "5.7.2"
   }
 }
